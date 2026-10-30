@@ -12,13 +12,18 @@
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -wall -wextra -werror
-ar = ar
+CFLAGS = -Wall -Wextra -Werror
+AR = ar
 ARFLAGS = -rcs
-INCLUDES = -Includes
+INCLUDES = -I includes
+
 SRCS_DIR = srcs
-SRCS = srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/f_swap.c
-OFILES = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
+OBJS_DIR = objs
+
+SRCS = $(SRCS_DIR)/ft_putchar.c $(SRCS_DIR)/ft_putstr.c $(SRCS_DIR)/ft_strcmp.c $(SRCS_DIR)/ft_strlen.c $(SRCS_DIR)/f_swap.c
+
+OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
+
 RM = rm -f
 
 all : $(NAME)
@@ -26,14 +31,17 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-$(OBJS_DIR)/%.o : $(SRCS_DIR=/%.c
+$(OBJS_DIR)/%.o : $(SRCS_DIR)/%.c
+	@mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean : 
-	$(RM) $(OBJS)
+	$(RM) -r $(OBJS_DIR)
 
-fclean : $(RM) $(NAME)
+fclean : clean
+	$(RM) $(NAME)
 
 re : fclean all
 
 .PHONY : all clean fclean re
+
