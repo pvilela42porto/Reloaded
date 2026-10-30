@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= ft_display_files
+NAME		= ft_display_file
 CC		= cc
 CFLAGS		= -Wall -Wextra -Werror
 SRCS_DIR	= srcs

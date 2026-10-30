@@ -6,6 +6,18 @@
 #    By: pvilela <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/29 20:06:32 by pvilela           #+#    #+#              #
+#    Updated: 2026/10/30 16:19:53 by pvilela          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pvilela <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/10/29 20:06:32 by pvilela           #+#    #+#              #
 #    Updated: 2026/10/30 13:53:59 by pvilela          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -20,7 +32,11 @@ INCLUDES = -I includes
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-SRCS = $(SRCS_DIR)/ft_putchar.c $(SRCS_DIR)/ft_putstr.c $(SRCS_DIR)/ft_strcmp.c $(SRCS_DIR)/ft_strlen.c $(SRCS_DIR)/f_swap.c
+SRCS = $(SRCS_DIR)/ft_putchar.c \
+       $(SRCS_DIR)/ft_putstr.c \
+       $(SRCS_DIR)/ft_strcmp.c \
+       $(SRCS_DIR)/ft_strlen.c \
+       $(SRCS_DIR)/ft_swap.c
 
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 
